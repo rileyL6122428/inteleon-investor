@@ -2,3 +2,10 @@ tr:hover {
   background: rgba(245, 245, 245, .05);
   cursor: pointer;
 }
+
+app-wealth-dist-pie {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-top: 25px;
+}

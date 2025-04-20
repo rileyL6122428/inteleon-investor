@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="leaders()" class="mat-elevation-z8">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let leader"> {{leader.position}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let leader"> {{leader.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cash">
+    <th mat-header-cell *matHeaderCellDef> Cash </th>
+    <td mat-cell *matCellDef="let leader"> <app-poke-dollars [amount]="leader.cash" /> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef> Joined </th>
+    <td mat-cell *matCellDef="let leader"> {{leader.createdAt | date: 'short'}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="leadersDisplayedColumns()"></tr>
+  <tr mat-row *matRowDef="let row; columns: leadersDisplayedColumns();"></tr>
+</table>

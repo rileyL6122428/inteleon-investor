@@ -1,8 +1,10 @@
-<mat-tab-group>
+<mat-tab-group (selectedIndexChange)="onTabChange()">
   <mat-tab label="Leaderboard">
     <app-current-leaderboard></app-current-leaderboard>
   </mat-tab>
-  <mat-tab label="Leaders over time"> Content 2 </mat-tab>
+  <mat-tab label="Leaders over time">
+      <app-bar-chart-race #resultsOverTime></app-bar-chart-race>
+  </mat-tab>
   <mat-tab label="Wealth distribution">
      <app-wealth-dist-pie></app-wealth-dist-pie>
   </mat-tab>

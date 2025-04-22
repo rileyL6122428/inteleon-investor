@@ -1,152 +1,4 @@
-// // src/app/bar-chart-race/bar-chart-race.component.ts
-// import { Component, OnInit, ElementRef, ViewChild, OnDestroy, AfterViewInit, Input, AfterContentChecked } from '@angular/core';
-// import * as d3 from 'd3';
-// import { EMPTY, interval, of, Subscription, switchMap, takeUntil, takeWhile, tap } from 'rxjs';
-
-// interface DataItem {
-//   name: string;
-//   value: number;
-//   date: Date;
-// }
-
-// @Component({
-//   selector: 'app-bar-chart-race',
-//   templateUrl: './bar-chart-race.component.html',
-//   styleUrls: ['./bar-chart-race.component.scss']
-// })
-// export class BarChartRaceComponent implements AfterViewInit, OnDestroy {
-//   @ViewChild('chartContainer') chartContainer!: ElementRef;
-//   private data: DataItem[] = [
-//     { date: '2024-01-01', name: 'A', value: 10 },
-//     { date: '2024-01-01', name: 'B', value: 5 },
-//     { date: '2024-01-01', name: 'C', value: 8 },
-
-//     { date: '2024-01-02', name: 'A', value: 15 },
-//     { date: '2024-01-02', name: 'B', value: 4 },
-//     { date: '2024-01-02', name: 'C', value: 7 },
-
-//     { date: '2024-01-03', name: 'A', value: 20 },
-//     { date: '2024-01-03', name: 'B', value: 1 },
-//     { date: '2024-01-03', name: 'C', value: 3 }
-//   ]
-//     .map(d => ({
-//       name: d.name,
-//       value: d.value,
-//       date: new Date(d.date)
-//     }));
-
-//   private svg: d3.Selection<any, unknown, null, undefined> | undefined;
-//   private x: d3.ScaleLinear<number, number, never> | undefined;
-//   private y: d3.ScaleBand<string> | undefined;
-//   private height = 400;
-//   private width = 600;
-//   private margin = { top: 20, right: 20, bottom: 30, left: 40 };
-//   private intervalSubscription: Subscription | undefined;
-//   private currentDateIndex = 0;
-
-//   private dates = Array.from(new Set(this.data.map(d => d.date.getTime())))
-//       .sort((a, b) => a - b)
-//       .map(time => new Date(time));
-
-//   play() {
-//     this.animateFrame();
-//   }
-
-//   ngAfterViewInit(): void {
-//     console.log('Calling after view init');
-//     this.loadData();
-//   }
-
-//   ngOnDestroy(): void {
-//     if (this.intervalSubscription) {
-//       this.intervalSubscription.unsubscribe();
-//     }
-//   }
-
-//   private loadData(): void {
-//     this.initChart();
-//     this.animateFrame();
-//   }
-
-
-//   private initChart(): void {
-//     this.svg = d3.select(this.chartContainer.nativeElement)
-//       .append('svg')
-//       .attr('width', this.width + this.margin.left + this.margin.right)
-//       .attr('height', this.height + this.margin.top + this.margin.bottom)
-//       .append('g')
-//       .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
-
-//     this.x = d3.scaleLinear()
-//       .range([0, this.width]);
-
-//     this.y = d3.scaleBand()
-//       .range([0, this.height])
-//       .padding(0.1);
-//   }
-
-
-//   private updateChart(dataSlice: DataItem[]): void {
-//     if (!this.x || !this.y || !this.svg) return;
-
-//     this.x.domain([0, d3.max(dataSlice, d => d.value) || 0]);
-//     this.y.domain(dataSlice.map(d => d.name));
-
-//     const bars = this.svg.selectAll('.bar')
-//       .data(dataSlice, d => (d as any).name);
-
-//     // Exit
-//     bars.exit().remove();
-
-//     // Enter
-//     bars.enter().append('rect')
-//       .attr('class', 'bar')
-//       .attr('x', 0)
-//       .attr('height', this.y.bandwidth())
-//       .attr('fill', 'steelblue')
-//       .merge(bars as any) // Update + Enter
-//       .transition(d3.transition().duration(200))
-//       .attr('y', d => this.y!(d.name)!)
-//       .attr('width', d => this.x!(d.value)!);
-//   }
-
-//   private startAnimation(): void {
-//     this.intervalSubscription = interval(1000).pipe(
-//       takeWhile(() => {
-//         return this.currentDateIndex < this.dates.length
-//       }),
-//       tap((value) => {console.log('After takeWhile', value)}),
-//     ).subscribe(() => {
-//       this.animateFrame();
-//       // const date = this.dates[this.currentDateIndex];
-//       // const dataSlice = this.data.filter(d => d.date.getTime() === date.getTime())
-//       //   .sort((a, b) => b.value - a.value)
-//       //   .slice(0, 10);
-
-//       // this.updateChart(dataSlice);
-
-//       // this.currentDateIndex = this.currentDateIndex + 1;
-//     });
-//   }
-
-//   private animateFrame() {
-//     const date = this.dates[this.currentDateIndex];
-//     const dataSlice = this.data.filter(d => d.date.getTime() === date.getTime())
-//       .sort((a, b) => b.value - a.value)
-//       .slice(0, 10);
-
-//     this.updateChart(dataSlice);
-
-//     this.currentDateIndex = this.currentDateIndex + 1;
-//   }
-// }
-
-
-
-
-
-// bar-chart-race.component.ts
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import * as d3 from 'd3';
 
 interface BarData {
@@ -160,8 +12,8 @@ interface BarData {
   templateUrl: './bar-chart-race.component.html',
   styleUrls: ['./bar-chart-race.component.scss']
 })
-export class BarChartRaceComponent implements AfterViewInit {
-  // @Input() data: BarData[] = [];
+export class BarChartRaceComponent {
+  
   data: BarData[] = [
   { date: '2025-01-01', name: 'Alpha', value: 100 },
   { date: '2025-01-01', name: 'Beta', value: 80 },
@@ -188,7 +40,7 @@ export class BarChartRaceComponent implements AfterViewInit {
   { date: '2025-01-05', name: 'Delta', value: 90 },
   { date: '2025-01-05', name: 'Gamma', value: 110 },
 ];
-;
+
   private svg: any;
   private width = 800;
   private height = 500;
@@ -227,27 +79,6 @@ export class BarChartRaceComponent implements AfterViewInit {
       .domain([0, d3.max(frameData, d => d.value) || 1])
       .range([0, this.width - this.margin.left - this.margin.right]);
 
-    // const xAxis = d3.axisBottom(x)
-    //   .ticks(5)
-    //   .tickSizeOuter(0);
-
-    // const axisGroup = this.svg.selectAll(".x-axis").data([null]);
-
-    // axisGroup.enter()
-    //   .append("g")
-    //   .attr("class", "x-axis")
-    //   .attr("transform", `translate(${this.margin.left}, ${this.height - this.margin.bottom})`)
-    //   .call(xAxis)
-    //   .selectAll("text")
-    //   .attr("fill", "darkgreen") // ✅ customize color here
-    //   .attr("font-size", "12px")
-    //   .attr("font-family", "sans-serif");
-
-    // axisGroup
-    //   .attr("transform", `translate(${this.margin.left}, ${this.height - this.margin.bottom})`)
-    //   .call(xAxis)
-    //   .selectAll("text")
-    //   .attr("fill", "darkgreen");
     const tickCount = 5;
     const maxValue = d3.max(frameData, d => d.value) ?? 100;
     const tickStep = Math.ceil(maxValue / tickCount / 10) * 10;
@@ -257,7 +88,6 @@ export class BarChartRaceComponent implements AfterViewInit {
     const xAxis = d3.axisBottom(x)
       .ticks(5)
       .tickValues(tickValues)
-      // .tickSizeOuter(0)
       .tickFormat(d3.format("~s"));;
 
     const xAxisGroup = this.svg.selectAll(".x-axis").data([null]);
@@ -323,7 +153,7 @@ export class BarChartRaceComponent implements AfterViewInit {
       .attr("font-size", "14px")
       .attr("font-family", "sans-serif")
       .text("");
-      // .text(date);
+
     this.svg.select(".date-label")
       .text(date);
   }

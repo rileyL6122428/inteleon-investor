@@ -26,5 +26,4 @@ export class ResultsComponent {
   onTabChange() {
     this.resultsOverTime?.pause();
   }
-
 }

@@ -1,0 +1,23 @@
+#assets-header {
+  display: none;
+}
+
+#net-worth {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+$icon-width: 80px;
+$icon-padding: $icon-width / 5;
+
+.pokemon-icon-container {
+  width: fit-content;
+  border: 1px solid #FFF;
+  padding: $icon-padding;
+  border-radius: 100%;
+}
+
+app-pokemon-icon {
+  display: block;
+  width: $icon-width;
+}

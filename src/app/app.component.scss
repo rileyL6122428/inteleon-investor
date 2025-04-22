@@ -1,9 +1,11 @@
 h1 {
-    display: flex;
-    app-inteleon-icon {
-        width: 55px;
-    }
-    #header-text {
-        padding-top: 10px;
+    a {
+        display: flex;
+        app-inteleon-icon {
+            width: 55px;
+        }
+        #header-text {
+            padding-top: 10px;
+        }
     }
 }

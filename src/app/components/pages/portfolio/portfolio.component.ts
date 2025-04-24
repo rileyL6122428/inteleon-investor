@@ -3,6 +3,11 @@ import { PokeDollarsComponent } from '../../poke-dollars/poke-dollars.component'
 import { PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { NgClass } from '@angular/common';
+import { LineGraphComponent } from '../../line-graph/line-graph.component';
 
 interface PokemonInvestment {
   pokedexNumber: number;
@@ -21,7 +26,11 @@ interface PokemonInvestment {
     PokeDollarsComponent,
     PokemonIconComponent,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    NgClass,
+    MatCardModule,
+    MatButtonModule,
+    MatExpansionModule
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'

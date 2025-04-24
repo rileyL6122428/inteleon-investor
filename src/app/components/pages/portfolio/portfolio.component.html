@@ -6,30 +6,42 @@
     <h3>Upcoming investment window - Orlando 05/03/2025</h3>
     <p>Free cash: 20%</p>
 
-    <!-- <ul></ul> -->
-    <div class="investment-row">
-      <div class="pokemon-icon-container">
-        <app-pokemon-icon></app-pokemon-icon>
-      </div>
-      <div class="name-and-percentage">
-        <p class="invstested-pokemon-name">Kangaskhan corp</p>
-        <p class="invstested-pokemon-slogan"><em>Mega profits in mega formats</em></p>
-        <p class="percentage-and-operating-split">
-          <mat-icon
-            class="invested-icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="paid" />
-          <span class="invested-percentage">8%</span>
-          <mat-icon
-            class="operating-split-icon"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="donut_small" />
-          <span class="operating-split">3/25</span>
-        </p>
-      </div>
-    </div>
+    
+    <mat-nav-list>
+      @for (investment of investments(); track $index) {
+        <!-- <a class="investment-link" href="https://google.com" mat-list-item> -->
+        <a
+          class="investment-link"
+          href="pokemon/{{investment.pokedexNumber}}/{{investment.pokemonForm}}"
+          mat-list-item>
+          <div class="investment-row">
+            <div class="pokemon-icon-container">
+              <app-pokemon-icon [pokedexNumber]="investment.pokedexNumber" />
+            </div>
+            <div class="name-and-percentage">
+              <p class="invstested-pokemon-name">{{investment.pokemonName}} {{investment.companyType}}</p>
+              <p class="invstested-pokemon-slogan"><em>{{investment.slogan}}</em></p>
+              <p class="percentage-and-operating-split">
+                <mat-icon
+                  class="invested-icon"
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="paid" />
+                <span class="invested-percentage">{{investment.investedPercentage}}%</span>
+                <mat-icon
+                  class="operating-split-icon"
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="donut_small" />
+                <span class="operating-split">
+                  {{investment.operatingSplitNumerator}}/{{investment.operatingSplitDenominator}}
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+      }
+     </mat-nav-list>
     
   </section>
 </section>

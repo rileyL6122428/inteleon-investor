@@ -1,52 +1,139 @@
 import { Component, signal } from '@angular/core';
-import { PokeDollarsComponent } from '../../poke-dollars/poke-dollars.component';
-import { PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { NgClass } from '@angular/common';
-import { LineGraphComponent } from '../../line-graph/line-graph.component';
+import { PokeDollarsComponent } from '../../poke-dollars/poke-dollars.component';
+import { PokemonInvestment, PokemonInvestmentsListComponent } from "../../widgets/pokemon-investments-list/pokemon-investments-list.component";
+import { DatePipe } from '@angular/common';
 
-interface PokemonInvestment {
-  pokedexNumber: number;
-  pokemonForm: string;
-  pokemonName: string;
-  companyType: string;
-  slogan: string;
-  investedPercentage: number;
-  operatingSplitNumerator: number;
-  operatingSplitDenominator: number;
+export interface TournamentInvestment {
+  date: Date;
+  isUpcoming: boolean;
+  province: string;
+  totalInvested: number;
+  totalReturned: number;
+  percentageReturned: number;
+  mons: PokemonInvestment[];
 }
 
 @Component({
   selector: 'app-portfolio',
   imports: [
     PokeDollarsComponent,
-    PokemonIconComponent,
     MatIconModule,
     MatListModule,
-    NgClass,
     MatCardModule,
     MatButtonModule,
-    MatExpansionModule
-  ],
+    MatExpansionModule,
+    PokemonInvestmentsListComponent,
+    DatePipe
+],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
 
-  investments = signal<PokemonInvestment[]>([
+  tournamentInvestments = signal<TournamentInvestment[]>([
+    {
+      date: new Date(2025, 4, 10),
+      isUpcoming: true,
+      province: 'Florida',
+      totalInvested: 4000,
+      totalReturned: 0,
+      percentageReturned: 0,
+      mons: [
+        {
+          pokedexNumber: 115,
+          pokemonName: 'Kangaskhan',
+          pokemonForm: 'default',
+          companyType: 'corp',
+          slogan: 'Mega profits in mega formats',
+          amount: 3000,
+          yourCutNumerator: 22,
+          yourCutDenominator: 25,
+        },
+        {
+          pokedexNumber: 150,
+          pokemonName: 'Mewtwo',
+          pokemonForm: 'default',
+          companyType: 'startup',
+          slogan: 'Please tariff shadow rider',
+          amount: 1000,
+          yourCutNumerator: 19,
+          yourCutDenominator: 20
+        },
+      ]
+    },
+    {
+      date: new Date(2025, 3, 10),
+      isUpcoming: false,
+      province: 'Kentucky',
+      totalInvested: 1000,
+      totalReturned: 5000,
+      percentageReturned: 500,
+      mons: [
+        {
+          pokedexNumber: 115,
+          pokemonName: 'Kangaskhan',
+          pokemonForm: 'default',
+          companyType: 'corp',
+          slogan: 'Mega profits in mega formats',
+          amount: 500,
+          returnedAmount: 2500
+        },
+        {
+          pokedexNumber: 150,
+          pokemonName: 'Mewtwo',
+          pokemonForm: 'default',
+          companyType: 'startup',
+          slogan: 'Please tariff shadow rider',
+          amount: 500,
+          returnedAmount: 2500
+        },
+      ]
+    },
+    {
+      date: new Date(2025, 2, 10),
+      isUpcoming: false,
+      province: 'Texas',
+      totalInvested: 2000,
+      totalReturned: 1000,
+      percentageReturned: -50,
+      mons: [
+        {
+          pokedexNumber: 115,
+          pokemonName: 'Kangaskhan',
+          pokemonForm: 'default',
+          companyType: 'corp',
+          slogan: 'Mega profits in mega formats',
+          amount: 1000,
+          returnedAmount: 500
+        },
+        {
+          pokedexNumber: 150,
+          pokemonName: 'Mewtwo',
+          pokemonForm: 'default',
+          companyType: 'startup',
+          slogan: 'Please tariff shadow rider',
+          amount: 1000,
+          returnedAmount: 500
+        },
+      ]
+    },
+  ]);
+
+  currentInvestments = signal<PokemonInvestment[]>([
     {
       pokedexNumber: 115,
       pokemonName: 'Kangaskhan',
       pokemonForm: 'default',
       companyType: 'corp',
       slogan: 'Mega profits in mega formats',
-      investedPercentage: 60,
-      operatingSplitNumerator: 3,
-      operatingSplitDenominator: 25
+      amount: 60000,
+      yourCutNumerator: 22,
+      yourCutDenominator: 25,
     },
     {
       pokedexNumber: 150,
@@ -54,9 +141,9 @@ export class PortfolioComponent {
       pokemonForm: 'default',
       companyType: 'startup',
       slogan: 'Please tariff shadow rider',
-      investedPercentage: 20,
-      operatingSplitNumerator: 1,
-      operatingSplitDenominator: 20
+      amount: 20000,
+      yourCutNumerator: 19,
+      yourCutDenominator: 20
     },
   ]);
 }

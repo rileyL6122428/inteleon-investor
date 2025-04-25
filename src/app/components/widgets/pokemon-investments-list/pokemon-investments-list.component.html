@@ -1,0 +1,47 @@
+<mat-nav-list>
+  @for (investment of investments(); track $index) {
+    <a
+      class="investment-link"
+      [ngClass]="{first: ($index === 0)}"
+      href="pokemon/{{investment.pokedexNumber}}/{{investment.pokemonForm}}"
+      mat-list-item>
+      <div class="investment-row">
+        <div class="pokemon-icon-container">
+          <app-pokemon-icon [pokedexNumber]="investment.pokedexNumber" />
+        </div>
+        <div class="name-and-percentage">
+          <p class="invstested-pokemon-name">{{investment.pokemonName}} {{investment.companyType}}</p>
+          <p class="invstested-pokemon-slogan"><em>{{investment.slogan}}</em></p>
+          <p class="percentage-and-operating-split">
+            <mat-icon
+              class="invested-icon"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="paid" />
+            <span class="invested-percentage"><app-poke-dollars [amount]="investment.amount" /></span>
+            @if(investment.returnedAmount) {
+              <mat-icon
+                class="returned-icon"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                [fontIcon]="investment.returnedAmount > investment.amount ? 'trending_up' : 'trending_down'" />
+              <span class="returned-amount">
+                <app-poke-dollars [amount]="investment.returnedAmount" />
+              </span>
+            }
+            @if (investment.yourCutNumerator && investment.yourCutDenominator) {
+              <mat-icon
+                class="operating-split-icon"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="donut_small" />
+              <span class="operating-split">
+                {{investment.yourCutNumerator}}/{{investment.yourCutDenominator}}
+              </span>
+            }
+          </p>
+        </div>
+      </div>
+    </a>
+  }
+</mat-nav-list>

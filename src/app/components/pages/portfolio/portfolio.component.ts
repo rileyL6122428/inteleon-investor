@@ -14,7 +14,7 @@ export interface TournamentInvestment {
   province: string;
   totalInvested: number;
   totalReturned: number;
-  percentageReturned: number;
+  percentageChange: number;
   mons: PokemonInvestment[];
 }
 
@@ -42,7 +42,7 @@ export class PortfolioComponent {
       province: 'Florida',
       totalInvested: 4000,
       totalReturned: 0,
-      percentageReturned: 0,
+      percentageChange: 0,
       mons: [
         {
           pokedexNumber: 115,
@@ -72,7 +72,7 @@ export class PortfolioComponent {
       province: 'Kentucky',
       totalInvested: 1000,
       totalReturned: 5000,
-      percentageReturned: 500,
+      percentageChange: 400,
       mons: [
         {
           pokedexNumber: 115,
@@ -100,7 +100,7 @@ export class PortfolioComponent {
       province: 'Texas',
       totalInvested: 2000,
       totalReturned: 1000,
-      percentageReturned: -50,
+      percentageChange: -50,
       mons: [
         {
           pokedexNumber: 115,
@@ -121,29 +121,6 @@ export class PortfolioComponent {
           returnedAmount: 500
         },
       ]
-    },
-  ]);
-
-  currentInvestments = signal<PokemonInvestment[]>([
-    {
-      pokedexNumber: 115,
-      pokemonName: 'Kangaskhan',
-      pokemonForm: 'default',
-      companyType: 'corp',
-      slogan: 'Mega profits in mega formats',
-      amount: 60000,
-      yourCutNumerator: 22,
-      yourCutDenominator: 25,
-    },
-    {
-      pokedexNumber: 150,
-      pokemonName: 'Mewtwo',
-      pokemonForm: 'default',
-      companyType: 'startup',
-      slogan: 'Please tariff shadow rider',
-      amount: 20000,
-      yourCutNumerator: 19,
-      yourCutDenominator: 20
     },
   ]);
 }

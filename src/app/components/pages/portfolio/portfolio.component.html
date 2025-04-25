@@ -1,8 +1,8 @@
 <section>
   <h2 id="assets-header">Portfolio</h2>
-  <p id="net-worth">Net worth: <app-poke-dollars [amount]="800000000" /></p>
+  <p id="net-worth">Net worth: <app-poke-dollars [amount]="5000" /></p>
   <p id="lifetime-returns">
-    <span id="lifetime-returns-text">Lifetime returned: 250%</span>
+    <span id="lifetime-returns-text">Lifetime change: 150%</span>
     <mat-icon
       class="operating-split-icon"
       aria-hidden="false"
@@ -29,7 +29,7 @@
                   aria-label="Example home icon"
                   [fontIcon]="investment.totalInvested < investment.totalReturned ? 'trending_up' : 'trending_down'" />
               <app-poke-dollars [amount]="investment.totalReturned"/>
-              ({{investment.percentageReturned > 0 ? '+' : ''}}{{investment.percentageReturned}}%)
+              ({{investment.percentageChange > 0 ? '+' : ''}}{{investment.percentageChange}}%)
             }
           </mat-panel-description>
         </mat-expansion-panel-header>

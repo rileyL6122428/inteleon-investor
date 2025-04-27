@@ -13,13 +13,15 @@
           <p class="invstested-pokemon-name">{{investment.pokemonName}} {{investment.companyType}}</p>
           <p class="invstested-pokemon-slogan"><em>{{investment.slogan}}</em></p>
           <p class="percentage-and-operating-split">
-            <mat-icon
-              class="invested-icon"
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="paid" />
-            <span class="invested-percentage"><app-poke-dollars [amount]="investment.amount" /></span>
-            @if(investment.returnedAmount) {
+            @if (investment.amount) {
+              <mat-icon
+                class="invested-icon"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="paid" />
+              <span class="invested-percentage"><app-poke-dollars [amount]="investment.amount" /></span>
+            }
+            @if(investment.returnedAmount && investment.amount) {
               <mat-icon
                 class="returned-icon"
                 aria-hidden="false"
@@ -32,6 +34,7 @@
             @if (investment.yourCutNumerator && investment.yourCutDenominator) {
               <mat-icon
                 class="operating-split-icon"
+                [ngClass]="{'is-first-icon': !investment.returnedAmount && !investment.amount}"
                 aria-hidden="false"
                 aria-label="Example home icon"
                 fontIcon="donut_small" />

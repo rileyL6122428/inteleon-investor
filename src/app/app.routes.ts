@@ -4,6 +4,7 @@ import { AboutThisSiteComponent } from './components/pages/about-this-site/about
 import { PortfolioComponent } from './components/pages/portfolio/portfolio.component';
 import { ResultsComponent } from './components/pages/results/results.component';
 import { PokemonComponent } from './components/pages/pokemon/pokemon.component';
+import { SearchPokemonComponent } from './components/pages/search-pokemon/search-pokemon.component';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,10 @@ export const routes: Routes = [
     {
         path: 'portfolio',
         component: PortfolioComponent
+    },
+    {
+        path: 'pokemon',
+        component: SearchPokemonComponent
     },
     {
         path: 'pokemon/:pokemonNumber/:form',

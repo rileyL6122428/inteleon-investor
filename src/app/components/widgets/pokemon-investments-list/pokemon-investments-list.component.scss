@@ -75,5 +75,8 @@ app-pokemon-icon {
 
   .operating-split-icon, .returned-icon {
     margin-left: 20px;
+    &.is-first-icon {
+      margin-left: 0;
+    }
   }
 }

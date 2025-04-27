@@ -14,7 +14,7 @@ export interface PokemonInvestment {
   pokemonName: string;
   companyType: string;
   slogan: string;
-  amount: number;
+  amount?: number;
   yourCutNumerator?: number;
   yourCutDenominator?: number;
   returnedAmount?: number;

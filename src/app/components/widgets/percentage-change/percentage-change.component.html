@@ -1,0 +1,11 @@
+<span class="percentage-change-container">
+  <app-poke-dollars [amount]="initial()"/>
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    [fontIcon]="initial() < final() ? 'trending_up' : 'trending_down'" />
+  <app-poke-dollars [amount]="final()"/>
+  <span class="percentage">
+    ({{percentageChange() > 0 ? '+' : ''}}{{percentageChange()}}%)
+  </span>
+</span>

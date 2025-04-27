@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { PokeDollarsComponent } from '../../poke-dollars/poke-dollars.component';
 import { PokemonInvestment, PokemonInvestmentsListComponent } from "../../widgets/pokemon-investments-list/pokemon-investments-list.component";
 import { DatePipe } from '@angular/common';
+import { PercentageChangeComponent } from '../../widgets/percentage-change/percentage-change.component';
 
 export interface TournamentInvestment {
   date: Date;
@@ -28,12 +29,16 @@ export interface TournamentInvestment {
     MatButtonModule,
     MatExpansionModule,
     PokemonInvestmentsListComponent,
-    DatePipe
+    DatePipe,
+    PercentageChangeComponent
 ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
+
+  currentNetWorth = signal(5000);
+  initialNetWorth = signal(2000);
 
   tournamentInvestments = signal<TournamentInvestment[]>([
     {

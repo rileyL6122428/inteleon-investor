@@ -1,0 +1,18 @@
+.header-container {
+  display: flex;
+
+  app-pokemon-icon {
+    display: block;
+    width: 200px;
+  }
+
+  h2 {
+    font-size: 42px;
+    margin: 0;
+  }
+
+  .slogan {
+    font-size: 18px;
+    margin: 10px 0 0;
+  }
+}

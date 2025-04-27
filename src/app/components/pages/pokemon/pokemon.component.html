@@ -1,17 +1,61 @@
-<h2>Pokemon icon and name goes here</h2>
+<div class="header-container">
+  <app-pokemon-icon [pokedexNumber]="pokedexNumber()" />
+  <div class="header-text-container">
+    <h2>Mewtwo</h2>
+    <p class="slogan"><i>Please tariff shadow rider</i></p>
+    <p>Expected ROI: +14%</p>
+    <a mat-stroked-button href="https://www.google.com/">Invest</a>
+  </div>
+</div>
 
-<p>Pokemon slogan goes here</p>
+<p>
+  Potential earnings:
+  (try making this a line graph, with horizontal line indicating break even point)
+</p>
+<ul>
+  <li>
+    <p>
+      Maximum ROI is 850%
+    </p>
+  </li>
+  <li>
+    <p>
+      Minimum positive ROI is 43%
+    </p>
+  </li>
+  <li>
+    <p>
+      Positive ROI realized with "top 64" placement
+    </p>
+  </li>
+</ul>
 
-<p>Operating Split</p>
+<p>Historical performance</p>
 
-<p>Past tournament investment results</p>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>4/10/2025 - Kentucky</mat-panel-title>
+      <mat-panel-description>
+        Top 8, +400%
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-<p>Percentage of spent investments on this pokemon</p>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Team link 1</mat-list-item>
+      <mat-list-item role="listitem">Team link 2</mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
 
-<p>Links to game data</p>
-
-<p>Links to usage data</p>
-
-<p>Format legality</p>
-
-<p>Invest button</p>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>3/10/2025 - Texas</mat-panel-title>
+      <mat-panel-description>
+        No placement, -50%
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      No team information
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

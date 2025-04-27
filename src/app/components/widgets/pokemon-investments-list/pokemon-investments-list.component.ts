@@ -13,7 +13,6 @@ export interface PokemonInvestment {
   pokedexNumber: number;
   pokemonForm: string;
   pokemonName: string;
-  companyType: string;
   slogan: string;
   amount?: number;
   yourCutNumerator?: number;

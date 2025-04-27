@@ -16,7 +16,6 @@ export interface TournamentInvestment {
   province: string;
   totalInvested: number;
   totalReturned: number;
-  percentageChange: number;
   mons: PokemonInvestment[];
 }
 
@@ -49,13 +48,11 @@ export class PortfolioComponent {
       province: 'Florida',
       totalInvested: 4000,
       totalReturned: 0,
-      percentageChange: 0,
       mons: [
         {
           pokedexNumber: 115,
           pokemonName: 'Kangaskhan',
           pokemonForm: 'default',
-          companyType: 'corp',
           slogan: 'Mega profits in mega formats',
           amount: 3000,
           yourCutNumerator: 22,
@@ -65,7 +62,6 @@ export class PortfolioComponent {
           pokedexNumber: 150,
           pokemonName: 'Mewtwo',
           pokemonForm: 'default',
-          companyType: 'startup',
           slogan: 'Please tariff shadow rider',
           amount: 1000,
           yourCutNumerator: 19,
@@ -79,13 +75,11 @@ export class PortfolioComponent {
       province: 'Kentucky',
       totalInvested: 1000,
       totalReturned: 5000,
-      percentageChange: 400,
       mons: [
         {
           pokedexNumber: 115,
           pokemonName: 'Kangaskhan',
           pokemonForm: 'default',
-          companyType: 'corp',
           slogan: 'Mega profits in mega formats',
           amount: 500,
           returnedAmount: 2500
@@ -94,7 +88,6 @@ export class PortfolioComponent {
           pokedexNumber: 150,
           pokemonName: 'Mewtwo',
           pokemonForm: 'default',
-          companyType: 'startup',
           slogan: 'Please tariff shadow rider',
           amount: 500,
           returnedAmount: 2500
@@ -107,13 +100,11 @@ export class PortfolioComponent {
       province: 'Texas',
       totalInvested: 2000,
       totalReturned: 1000,
-      percentageChange: -50,
       mons: [
         {
           pokedexNumber: 115,
           pokemonName: 'Kangaskhan',
           pokemonForm: 'default',
-          companyType: 'corp',
           slogan: 'Mega profits in mega formats',
           amount: 1000,
           returnedAmount: 500
@@ -122,7 +113,6 @@ export class PortfolioComponent {
           pokedexNumber: 150,
           pokemonName: 'Mewtwo',
           pokemonForm: 'default',
-          companyType: 'startup',
           slogan: 'Please tariff shadow rider',
           amount: 1000,
           returnedAmount: 500

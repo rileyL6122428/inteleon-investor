@@ -24,7 +24,6 @@ export class SearchPokemonComponent {
       pokedexNumber: 115,
       pokemonName: 'Kangaskhan',
       pokemonForm: 'default',
-      companyType: 'corp',
       slogan: 'Mega profits in mega formats',
       yourCutNumerator: 22,
       yourCutDenominator: 25
@@ -33,7 +32,6 @@ export class SearchPokemonComponent {
       pokedexNumber: 150,
       pokemonName: 'Mewtwo',
       pokemonForm: 'default',
-      companyType: 'startup',
       slogan: 'Please tariff shadow rider',
       yourCutNumerator: 19,
       yourCutDenominator: 20
@@ -42,7 +40,6 @@ export class SearchPokemonComponent {
       pokedexNumber: 151,
       pokemonName: 'Mew',
       pokemonForm: 'default',
-      companyType: 'startup',
       slogan: 'Mythical returns',
       yourCutNumerator: 19,
       yourCutDenominator: 20

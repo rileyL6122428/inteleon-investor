@@ -1,12 +1,13 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
+<form>
+  <mat-form-field>
     <mat-label>Search pokemon</mat-label>
     <input
       matInput
       [ngModel]="this.searchTerm()"
       (ngModelChange)="this.searchTerm.set($event)"
       name="search-input">
-  </mat-form-field>
+    </mat-form-field>
+    <!-- value="{{this.searchTerm()}}"> -->
 </form>
 
 <app-pokemon-investments-list [investments]="filteredList()" />

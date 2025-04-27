@@ -8,6 +8,7 @@ import { PokeDollarsComponent } from '../../poke-dollars/poke-dollars.component'
 import { PokemonInvestment, PokemonInvestmentsListComponent } from "../../widgets/pokemon-investments-list/pokemon-investments-list.component";
 import { DatePipe } from '@angular/common';
 import { PercentageChangeComponent } from '../../widgets/percentage-change/percentage-change.component';
+import { RouterLink } from '@angular/router';
 
 export interface TournamentInvestment {
   date: Date;
@@ -30,7 +31,8 @@ export interface TournamentInvestment {
     MatExpansionModule,
     PokemonInvestmentsListComponent,
     DatePipe,
-    PercentageChangeComponent
+    PercentageChangeComponent,
+    RouterLink
 ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'

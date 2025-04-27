@@ -26,7 +26,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
           @if(investment.isUpcoming) {
-            <a href="pokemon">Select mons</a>
+            <a routerLink="/pokemon">Select mons</a>
           }
           <app-pokemon-investments-list [investments]="investment.mons"/>
       </mat-expansion-panel>

@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PokeDollarsComponent } from "../../poke-dollars/poke-dollars.component";
+import { RouterLink } from '@angular/router';
 
 export interface PokemonInvestment {
   pokedexNumber: number;
@@ -30,7 +31,8 @@ export interface PokemonInvestment {
     MatCardModule,
     MatButtonModule,
     MatExpansionModule,
-    PokeDollarsComponent
+    PokeDollarsComponent,
+    RouterLink
 ],
   templateUrl: './pokemon-investments-list.component.html',
   styleUrl: './pokemon-investments-list.component.scss'

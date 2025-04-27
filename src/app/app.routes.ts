@@ -5,6 +5,7 @@ import { PortfolioComponent } from './components/pages/portfolio/portfolio.compo
 import { ResultsComponent } from './components/pages/results/results.component';
 import { PokemonComponent } from './components/pages/pokemon/pokemon.component';
 import { SearchPokemonComponent } from './components/pages/search-pokemon/search-pokemon.component';
+import { PokemonDashboardComponent } from './components/pages/pokemon-dashboard/pokemon-dashboard.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
     {
         path: 'pokemon/:pokemonNumber/:form',
         component: PokemonComponent
+    },
+    {
+        path: 'pokemon-dashboard',
+        component: PokemonDashboardComponent
     },
     {
         path: 'about',

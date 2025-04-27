@@ -1,8 +1,8 @@
-import { Component, linkedSignal, OnInit, signal } from '@angular/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { PokemonInvestment, PokemonInvestmentsListComponent } from '../../widgets/pokemon-investments-list/pokemon-investments-list.component';
+import { Component, linkedSignal, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { PokemonInvestment, PokemonInvestmentsListComponent } from '../../widgets/pokemon-investments-list/pokemon-investments-list.component';
 
 @Component({
   selector: 'app-search-pokemon',
@@ -60,8 +60,4 @@ export class SearchPokemonComponent {
       .includes(this.searchTerm().toLocaleLowerCase())
     );
   });
-
-  onChange(event: any) {
-    console.log(event);
-  }
 }

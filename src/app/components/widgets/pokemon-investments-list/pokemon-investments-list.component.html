@@ -3,7 +3,7 @@
     <a
       class="investment-link"
       [ngClass]="{first: ($index === 0)}"
-      href="pokemon/{{investment.pokedexNumber}}/{{investment.pokemonForm}}"
+      routerLink="/pokemon/{{investment.pokedexNumber}}/{{investment.pokemonForm}}"
       mat-list-item>
       <div class="investment-row">
         <div class="pokemon-icon-container">

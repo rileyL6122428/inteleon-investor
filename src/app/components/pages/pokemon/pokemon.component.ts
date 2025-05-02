@@ -4,6 +4,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
 import { MatListModule } from '@angular/material/list';
 import * as d3 from 'd3';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-pokemon',
@@ -11,7 +12,8 @@ import * as d3 from 'd3';
     PokemonIconComponent,
     MatExpansionModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
 ],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.scss'
@@ -218,7 +220,7 @@ export class PokemonComponent {
           .attr('y2', height);
 
         // Move text
-        const text = `PM = 4, P3 = 2, ROI = ${d.return}%`;
+        const text = `${d.placement}, ${d.return}%`;
         const padding = 4;
 
         focusGroup.select('#focus-text')

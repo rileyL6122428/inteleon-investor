@@ -3,63 +3,78 @@
   <div class="header-text-container">
     <h2>Mewtwo</h2>
     <p class="slogan"><i>Please tariff shadow rider</i></p>
-    <p>Expected ROI: +14%</p>
-    <a mat-stroked-button href="https://www.google.com/">Invest</a>
+    <a class="invest-link" mat-stroked-button href="https://www.google.com/">Invest</a>
   </div>
 </div>
 
-<h3>Potential Earnings</h3>
-<p>ROI = ((placement multiplier) / (past performance premium) - 1) * 100</p>
-<svg #chart width="800" height="400"></svg>
+<section id="potential-earnings-chart">
+  <h3>Potential Earnings</h3>
+  <svg #chart width="800" height="400"></svg>
+</section>
 
-<p>
-  Potential earnings:
-  (try making this a line graph, with horizontal line indicating break even point)
-</p>
-<ul>
-  <li>
-    <p>
-      Maximum ROI is 850%
-    </p>
-  </li>
-  <li>
-    <p>
-      Minimum positive ROI is 43%
-    </p>
-  </li>
-  <li>
-    <p>
-      Positive ROI realized with "top 64" placement
-    </p>
-  </li>
-</ul>
 
-<p>Historical performance</p>
+<section id="historical-performance">
+  <h3>Historical performance</h3>
+  
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>4/10/2025 - Kentucky</mat-panel-title>
+        <mat-panel-description>
+          Top 8, +400%
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <p>Team links</p>
+      <mat-list role="list">
+        <mat-list-item role="listitem">Team link 1</mat-list-item>
+        <mat-list-item role="listitem">Team link 2</mat-list-item>
+      </mat-list>
 
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>4/10/2025 - Kentucky</mat-panel-title>
-      <mat-panel-description>
-        Top 8, +400%
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+      <p>ROI % calculation</p>
+      <mat-list role="list">
+        <mat-list-item role="listitem">= ((Tournament placement mulitiplier) / (Past Performance Premium) - 1) * 100%</mat-list-item>
+        <mat-list-item role="listitem">= (6 / (6 / 5) - 1) * 100%</mat-list-item>
+        <mat-list-item role="listitem">= 400%</mat-list-item>
+      </mat-list>
+      
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>3/10/2025 - Texas</mat-panel-title>
+        <mat-panel-description>
+          No placement, -50%
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-list role="list">
+        No team information
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>
 
-    <mat-list role="list">
-      <mat-list-item role="listitem">Team link 1</mat-list-item>
-      <mat-list-item role="listitem">Team link 2</mat-list-item>
-    </mat-list>
-  </mat-expansion-panel>
+<section id="more-resources-section">
+  <h3>More resources</h3>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>3/10/2025 - Texas</mat-panel-title>
-      <mat-panel-description>
-        No placement, -50%
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <mat-list role="list">
-      No team information
-    </mat-list>
-  </mat-expansion-panel>
-</mat-accordion>
+  <mat-nav-list>
+    <a
+      mat-list-item
+      href="https://www.pikalytics.com/pokedex/gen9vgc2025regg/mewtwo"
+      target="_blank">
+      Pikalytics (usage)
+    </a>
+    <a
+      mat-list-item
+      href="https://bulbapedia.bulbagarden.net/wiki/Mewtwo_(Pok%C3%A9mon)"
+      target="_blank">
+      Bulbapedia (wiki)
+    </a>
+    <a
+      mat-list-item
+      href="https://limitlessvgc.com/pokemon/mewtwo/results/"
+      target="_blank">
+      Limitless VGC (results)
+    </a>
+  </mat-nav-list>
+</section>

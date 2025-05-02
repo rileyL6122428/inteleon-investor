@@ -15,4 +15,25 @@
     font-size: 18px;
     margin: 10px 0 0;
   }
+
+  .invest-link {
+    margin-top: 25px;
+  }
+}
+
+$section-padding-bottom: 15px;
+
+#potential-earnings-chart {
+  padding-bottom: $section-padding-bottom;
+}
+
+#historical-performance {
+  width: 800px;
+  padding-bottom: $section-padding-bottom;
+}
+
+#more-resources-section {
+  [mat-list-item] {
+    width: fit-content;
+  }
 }

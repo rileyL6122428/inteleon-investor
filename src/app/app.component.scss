@@ -1,11 +1,27 @@
-h1 {
+#header-and-nav-container {
+  h1 {
     a {
-        display: flex;
-        app-inteleon-icon {
-            width: 55px;
-        }
-        #header-text {
-            padding-top: 10px;
-        }
+      display: flex;
+      app-inteleon-icon {
+        width: 55px;
+      }
+      #header-text {
+        padding-top: 10px;
+      }
     }
+  }
+  
+  #site-navigation {
+    a {
+      width: fit-content;
+    }
+  }
+
+  &.display-horizontal {
+    display: flex;
+
+    #site-navigation {
+      display: flex;
+    }
+  }
 }

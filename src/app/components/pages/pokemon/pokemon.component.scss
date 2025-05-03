@@ -4,6 +4,7 @@
   app-pokemon-icon {
     display: block;
     width: 200px;
+    margin-right: 11px;
   }
 
   h2 {
@@ -16,8 +17,31 @@
     margin: 10px 0 0;
   }
 
-  .invest-link {
-    margin-top: 25px;
+  .investment-button {
+    margin-right: 11px
+  }
+}
+
+#pokemon-tabs {
+  width: 900px;
+  margin-top: 25px;
+
+  $tab-contents-margin-top: 20px;
+
+  
+  #potential-earnings-chart {
+    display: block;
+    margin: auto;
+    margin-top: $tab-contents-margin-top;
+  }
+
+  #historical-performance-accordion {
+    display: block;
+    margin-top: $tab-contents-margin-top;
+  }
+
+  #more-resources-nav-list {
+    margin-top: $tab-contents-margin-top;
   }
 }
 

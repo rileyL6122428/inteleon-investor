@@ -1,10 +1,12 @@
-import { Component, ElementRef, Input, signal, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Input, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
 import { MatListModule } from '@angular/material/list';
 import * as d3 from 'd3';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialog } from '@angular/material/dialog';
+import { InvestInPokemonComponent } from '../../widgets/invest-in-pokemon/invest-in-pokemon.component';
 
 @Component({
   selector: 'app-pokemon',
@@ -20,7 +22,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 })
 export class PokemonComponent {
 
-  pokedexNumber = signal(0);
+  readonly dialog = inject(MatDialog);
+
+  readonly pokedexNumber = signal(0);
 
   @ViewChild('chart') private chartContainer!: ElementRef<SVGSVGElement>;
 
@@ -56,6 +60,16 @@ export class PokemonComponent {
   @Input()
   set pokemonNumber(pokemonNumber: number) {
     this.pokedexNumber.set(pokemonNumber);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(InvestInPokemonComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed. Result =', result);
+    });
   }
 
   ngAfterViewInit() {

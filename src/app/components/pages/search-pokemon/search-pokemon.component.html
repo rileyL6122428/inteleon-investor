@@ -3,11 +3,9 @@
     <mat-label>Search pokemon</mat-label>
     <input
       matInput
-      [ngModel]="this.searchTerm()"
-      (ngModelChange)="this.searchTerm.set($event)"
+      [(ngModel)]="searchTerm"
       name="search-input">
-    </mat-form-field>
-    <!-- value="{{this.searchTerm()}}"> -->
+  </mat-form-field>
 </form>
 
 <app-pokemon-investments-list [investments]="filteredList()" />

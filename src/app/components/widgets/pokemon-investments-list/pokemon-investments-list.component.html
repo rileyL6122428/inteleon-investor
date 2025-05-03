@@ -42,6 +42,22 @@
                 {{investment.yourCutNumerator}}/{{investment.yourCutDenominator}}
               </span>
             }
+            @if (investment.yourCutNumerator && investment.yourCutDenominator) {
+              <button
+                (click)="$event.preventDefault(); $event.stopPropagation(); onEdit(investment)"
+                mat-icon-button
+                aria-label="Example icon button with a menu icon"
+                class="adjust-investment-button">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                (click)="$event.preventDefault(); $event.stopPropagation(); onDivest(investment)"
+                mat-icon-button
+                aria-label="Example icon button with a menu icon"
+                class="divest-button">
+                <mat-icon>delete</mat-icon>
+              </button>
+            }
           </p>
         </div>
       </div>

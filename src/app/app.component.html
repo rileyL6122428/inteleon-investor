@@ -1,7 +1,17 @@
-<h1>
-  <a routerLink="/">
-    <app-inteleon-icon></app-inteleon-icon>
-    <span id="header-text">The Inteleon Investor</span>
-  </a>
-</h1>
+<div id="header-and-nav-container" [ngClass]="{'display-horizontal': !onHomePage()}">
+  <h1>
+    <a routerLink="/">
+      <app-inteleon-icon></app-inteleon-icon>
+      <span id="header-text">The Inteleon Investor</span>
+    </a>
+  </h1>
+  
+  <mat-nav-list id="site-navigation">
+    <a mat-list-item routerLink="results">Leaderboard</a>
+    <a mat-list-item routerLink="portfolio">Portfolio</a>
+    <a mat-list-item routerLink="pokemon">Pokémon</a>
+    <a mat-list-item routerLink="about">About</a>
+  </mat-nav-list>
+</div>
+
 <router-outlet />

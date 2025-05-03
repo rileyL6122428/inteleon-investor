@@ -1,4 +1,4 @@
-import { Component, linkedSignal, signal } from '@angular/core';
+import { Component, linkedSignal, model, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -17,9 +17,9 @@ import { PokemonInvestment, PokemonInvestmentsListComponent } from '../../widget
 })
 export class SearchPokemonComponent {
 
-  searchTerm = signal('');
+  readonly searchTerm = model('');
 
-  searchableMons = signal<PokemonInvestment[]>([
+  readonly searchableMons = signal<PokemonInvestment[]>([
     {
       pokedexNumber: 115,
       pokemonName: 'Kangaskhan',
@@ -46,7 +46,7 @@ export class SearchPokemonComponent {
     },
   ]);
 
-  filteredList = linkedSignal<PokemonInvestment[]>(() => {
+  readonly filteredList = linkedSignal<PokemonInvestment[]>(() => {
     if (!this.searchTerm()) {
       return [];
     }

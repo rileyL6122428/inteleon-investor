@@ -32,10 +32,10 @@ export const routes: Routes = [
         path: 'about',
         component: AboutThisSiteComponent
     },
-    {
-        path: '',
-        component: HomeComponent
-    },
+    // {
+    //     path: '',
+    //     component: HomeComponent
+    // },
     {
         path: '*',
         redirectTo: ''

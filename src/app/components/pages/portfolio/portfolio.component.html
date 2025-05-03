@@ -7,11 +7,12 @@
       [initial]="initialNetWorth()"
       [final]="currentNetWorth()" />
   </p>
+  <p id="free-cash">Free cash: 1,000</p>
 
   <h3>Tournament investments</h3>
   <mat-accordion class="investment-accordion">
     @for(investment of tournamentInvestments(); track $index) {
-      <mat-expansion-panel>
+      <mat-expansion-panel [expanded]="investment.isUpcoming">
         <mat-expansion-panel-header>
           <mat-panel-title>{{investment.date | date:'M/d/yyyy' }} - {{investment.province}}</mat-panel-title>
           <mat-panel-description>
@@ -26,7 +27,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
           @if(investment.isUpcoming) {
-            <a routerLink="/pokemon">Select mons</a>
+            <a routerLink="/pokemon">Add mons</a>
           }
           <app-pokemon-investments-list [investments]="investment.mons"/>
       </mat-expansion-panel>

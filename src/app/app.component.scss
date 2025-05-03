@@ -1,27 +1,52 @@
 #header-and-nav-container {
   h1 {
+    width: fit-content;
+    padding-top: 25px;
     a {
       display: flex;
       app-inteleon-icon {
-        width: 55px;
+        width: 100px;
       }
       #header-text {
-        padding-top: 10px;
+        padding-top: 25px;
+        font-size: 48px;
       }
     }
   }
   
   #site-navigation {
+    padding-left: 12px;
     a {
-      width: fit-content;
+      width: 515px;
     }
   }
 
   &.display-horizontal {
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 22px;
+
+    h1 {
+      padding-top: 5px;
+      a {
+        app-inteleon-icon {
+          width: 55px;
+        }
+        #header-text {
+          padding-top: 15px;
+          font-size: 24px;
+        }
+      }
+    }
+
 
     #site-navigation {
       display: flex;
+      padding-top: 11px;
+
+      a {
+        width: fit-content;
+      }
     }
   }
 }

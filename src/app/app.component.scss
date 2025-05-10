@@ -1,3 +1,8 @@
+#header-nav-theme-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 #header-and-nav-container {
   h1 {
     width: fit-content;
@@ -47,6 +52,32 @@
       a {
         width: fit-content;
       }
+    }
+  }
+}
+
+#header-and-nav-container.baller {
+  h1 a {
+    flex-direction: column;
+  }
+
+  #baller-icon {
+    width: 151px;
+  }
+
+  #ball-street-sign {
+    display: flex;
+    flex-direction: row;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    border: #FFF 1px solid;
+    font-size: 40px;
+
+    #street-sub-text {
+      font-size: 18px;
+      margin-left: 8px;
     }
   }
 }

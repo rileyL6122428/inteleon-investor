@@ -42,7 +42,7 @@
                 {{investment.yourCutNumerator}}/{{investment.yourCutDenominator}}
               </span>
             }
-            @if (investment.yourCutNumerator && investment.yourCutDenominator) {
+            @if (investment.canEdit) {
               <button
                 (click)="$event.preventDefault(); $event.stopPropagation(); onEdit(investment)"
                 mat-icon-button

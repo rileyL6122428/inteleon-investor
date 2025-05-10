@@ -57,6 +57,7 @@ export class PortfolioComponent {
           amount: 3000,
           yourCutNumerator: 22,
           yourCutDenominator: 25,
+          canEdit: true
         },
         {
           pokedexNumber: 150,
@@ -65,7 +66,8 @@ export class PortfolioComponent {
           slogan: 'Please tariff shadow rider',
           amount: 1000,
           yourCutNumerator: 19,
-          yourCutDenominator: 20
+          yourCutDenominator: 20,
+          canEdit: true
         },
       ]
     },

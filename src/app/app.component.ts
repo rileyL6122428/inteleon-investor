@@ -1,10 +1,14 @@
 import { NgClass } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, model, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavigationStart, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { InteleonIconComponent } from './components/inteleon-icon/inteleon-icon.component';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +19,11 @@ import { InteleonIconComponent } from './components/inteleon-icon/inteleon-icon.
     MatIconModule,
     RouterLink,
     MatListModule,
-    NgClass
+    NgClass,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -23,6 +31,8 @@ import { InteleonIconComponent } from './components/inteleon-icon/inteleon-icon.
 export class AppComponent implements OnInit{
   title = 'inteleon-investor-frontend';
   onHomePage = signal(true);
+
+  theme = model<'inteleon' | 'baller'>('inteleon');
 
   constructor(
     private router: Router,

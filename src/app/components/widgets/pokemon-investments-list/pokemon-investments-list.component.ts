@@ -20,6 +20,7 @@ export interface PokemonInvestment {
   yourCutNumerator?: number;
   yourCutDenominator?: number;
   returnedAmount?: number;
+  canEdit?: boolean;
 }
 
 @Component({

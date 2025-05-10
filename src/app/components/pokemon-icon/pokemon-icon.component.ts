@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-icon',
@@ -7,13 +7,5 @@ import { Component, Input, signal } from '@angular/core';
   styleUrl: './pokemon-icon.component.scss'
 })
 export class PokemonIconComponent {
-
-  iconUrl = signal<string>('');
-
-  @Input()
-  set pokedexNumber(pokedexNumber: number) {
-    this.iconUrl.set(
-      `pokemon/${pokedexNumber.toString().padStart(4, '0')}/icon.svg`
-    );
-  }
+  iconPath = input<string | undefined>('');
 }

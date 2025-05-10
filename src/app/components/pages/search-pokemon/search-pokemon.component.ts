@@ -21,12 +21,31 @@ export class SearchPokemonComponent {
 
   readonly searchableMons = signal<PokemonInvestment[]>([
     {
+      pokedexNumber: 1,
+      pokemonName: 'Bulbasaur',
+      pokemonForm: 'default',
+      slogan: 'Best starter',
+      yourCutNumerator: 22,
+      yourCutDenominator: 25,
+      iconPath: '/pokemon/0001/default/icon.png'
+    },
+    {
+      pokedexNumber: 2,
+      pokemonName: 'Ivysaur',
+      pokemonForm: 'default',
+      slogan: 'Best starter adolescent',
+      yourCutNumerator: 22,
+      yourCutDenominator: 25,
+      iconPath: ''
+    },
+    {
       pokedexNumber: 115,
       pokemonName: 'Kangaskhan',
       pokemonForm: 'default',
       slogan: 'Mega profits in mega formats',
       yourCutNumerator: 22,
-      yourCutDenominator: 25
+      yourCutDenominator: 25,
+      iconPath: '/pokemon/0115/default/icon.png'
     },
     {
       pokedexNumber: 150,
@@ -34,7 +53,8 @@ export class SearchPokemonComponent {
       pokemonForm: 'default',
       slogan: 'Please tariff shadow rider',
       yourCutNumerator: 19,
-      yourCutDenominator: 20
+      yourCutDenominator: 20,
+      iconPath: '/pokemon/0150/default/icon.png'
     },
     {
       pokedexNumber: 151,
@@ -42,7 +62,8 @@ export class SearchPokemonComponent {
       pokemonForm: 'default',
       slogan: 'Mythical returns',
       yourCutNumerator: 19,
-      yourCutDenominator: 20
+      yourCutDenominator: 20,
+      iconPath: '/pokemon/0151/default/icon.png'
     },
   ]);
 

@@ -1,3 +1,2 @@
-@if(iconUrl()) {
-  <img [src]="iconUrl()" />
-}
+
+<img [src]="iconPath() || 'pokemon/placeholder/icon.png'" />

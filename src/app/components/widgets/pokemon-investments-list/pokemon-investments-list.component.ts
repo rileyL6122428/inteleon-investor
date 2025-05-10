@@ -21,6 +21,7 @@ export interface PokemonInvestment {
   yourCutDenominator?: number;
   returnedAmount?: number;
   canEdit?: boolean;
+  iconPath?: string | undefined;
 }
 
 @Component({

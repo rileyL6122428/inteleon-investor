@@ -57,27 +57,78 @@
 }
 
 #header-and-nav-container.baller {
-  h1 a {
-    flex-direction: column;
+  h1 {
+    margin-bottom: 5px;
+    a {
+      flex-direction: column;
+    }
   }
 
   #baller-icon {
-    width: 151px;
+    width: 225px;
   }
 
   #ball-street-sign {
     display: flex;
     flex-direction: row;
 
-    padding: 7px 10px;
+    padding: 10px 15px;
     border-radius: 6px;
 
     border: #FFF 1px solid;
-    font-size: 40px;
+    font-size: 60px;
 
     #street-sub-text {
-      font-size: 18px;
+      font-size: 24px;
       margin-left: 8px;
+    }
+  }
+
+  #site-navigation {
+    padding-left: 0;
+    a {
+      width: 230px;
+    }
+  }
+}
+
+#header-and-nav-container.baller.display-horizontal {
+  h1 {
+    margin-bottom: 0px;
+    a {
+      flex-direction: row;
+      border: #fff solid 1px;
+      border-radius: 6px;
+      padding: 3px 3px 0;
+    }
+  }
+  #baller-icon {
+    width: 105px;
+  }
+
+  #ball-street-sign {
+    padding: 7px 10px;
+    border: 0;
+    font-size: 30px;
+    padding-top: 0;
+
+    #street-name {
+      height: fit-content;
+      margin-top: 17px;
+    }
+
+    #street-sub-text {
+      height: fit-content;
+      font-size: 12px;
+      margin-left: 6px;
+      margin-top: 18px;
+    }
+  }
+
+  #site-navigation {
+    padding-left: 15px;
+    a {
+      width: fit-content;
     }
   }
 }

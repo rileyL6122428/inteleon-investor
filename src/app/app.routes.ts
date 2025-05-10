@@ -6,6 +6,7 @@ import { ResultsComponent } from './components/pages/results/results.component';
 import { PokemonComponent } from './components/pages/pokemon/pokemon.component';
 import { SearchPokemonComponent } from './components/pages/search-pokemon/search-pokemon.component';
 import { PokemonDashboardComponent } from './components/pages/pokemon-dashboard/pokemon-dashboard.component';
+import { ThemeSelectionComponent } from './components/pages/theme-selection/theme-selection.component';
 
 export const routes: Routes = [
     {
@@ -32,10 +33,10 @@ export const routes: Routes = [
         path: 'about',
         component: AboutThisSiteComponent
     },
-    // {
-    //     path: '',
-    //     component: HomeComponent
-    // },
+    {
+        path: 'theme',
+        component: ThemeSelectionComponent
+    },
     {
         path: '*',
         redirectTo: ''

@@ -12,7 +12,7 @@
         @if (theme() === 'baller') {
           <img id="baller-icon" src="/inteleon-baller.png"/>
           <div id="ball-street-sign">
-            <span>BALL</span>
+            <span id="street-name">BALL</span>
             <span id="street-sub-text">ST.</span>
           </div>
         }
@@ -23,18 +23,9 @@
       <a mat-list-item routerLink="results">Leaderboard</a>
       <a mat-list-item routerLink="portfolio">Portfolio</a>
       <a mat-list-item routerLink="pokemon">Pokémon</a>
+      <a mat-list-item routerLink="theme">Theme</a>
       <a mat-list-item routerLink="about">About</a>
     </mat-nav-list>
-  </div>
-
-  <div id="theme-container">
-    <mat-form-field>
-      <mat-label>Investor mode</mat-label>
-      <mat-select [(ngModel)]="theme">
-        <mat-option [value]="'inteleon'">Inteleon</mat-option>
-        <mat-option [value]="'baller'">Baller</mat-option>
-      </mat-select>
-    </mat-form-field>
   </div>
 </div>
 

@@ -7,7 +7,7 @@
       [initial]="initialNetWorth()"
       [final]="currentNetWorth()" />
   </p>
-  <p id="free-cash">Free cash: 1,000</p>
+  <p id="free-cash">Free cash: <app-poke-dollars [amount]="freeCash()"/></p>
 
   <h3>Tournament investments</h3>
   <mat-accordion class="investment-accordion">

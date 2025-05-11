@@ -1,10 +1,6 @@
-import { MockDatabase } from "../db/mock-database";
+import { BaseController } from "./base-controller";
 
-export class PokemonController {
-
-  constructor(
-    private database: MockDatabase
-  ) {}
+export class PokemonController extends BaseController {
 
   getAll() {
     return this.database.pokemonTable.getAll();

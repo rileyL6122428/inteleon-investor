@@ -5,7 +5,9 @@ export const USER_SEED: User[] = [
   {
     id: '1',
     username: 'red-0001',
-    password: 'password'
+    password: 'password',
+    freeCash: 1000,
+    netWorth: 5000
   },
 ];
 

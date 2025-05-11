@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -9,6 +9,7 @@ import { PokemonInvestment, PokemonInvestmentsListComponent } from "../../widget
 import { DatePipe } from '@angular/common';
 import { PercentageChangeComponent } from '../../widgets/percentage-change/percentage-change.component';
 import { RouterLink } from '@angular/router';
+import { PortfolioService } from '../../../services/portfolio.service';
 
 export interface TournamentInvestment {
   date: Date;
@@ -36,10 +37,13 @@ export interface TournamentInvestment {
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit {
 
-  currentNetWorth = signal(5000);
+  private portfolioService = inject(PortfolioService);
+
+  currentNetWorth = signal<number>(0);
   initialNetWorth = signal(2000);
+  freeCash = signal(0);
 
   tournamentInvestments = signal<TournamentInvestment[]>([
     {
@@ -122,4 +126,13 @@ export class PortfolioComponent {
       ]
     },
   ]);
+
+  ngOnInit(): void {
+    this.portfolioService.getPortfolio().subscribe(
+      (portfolio) => {
+        this.currentNetWorth.set(portfolio.netWorth);
+        this.freeCash.set(portfolio.freeCash);
+      }
+    );
+  }
 }

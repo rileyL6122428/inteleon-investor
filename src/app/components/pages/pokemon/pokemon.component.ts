@@ -1,12 +1,14 @@
-import { Component, ElementRef, inject, Input, signal, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, inject, Input, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
+import { IconParams, PokemonIconComponent } from '../../pokemon-icon/pokemon-icon.component';
 import { MatListModule } from '@angular/material/list';
 import * as d3 from 'd3';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialog } from '@angular/material/dialog';
 import { InvestInPokemonComponent } from '../../widgets/invest-in-pokemon/invest-in-pokemon.component';
+import { PokemonInvestment } from '../../widgets/pokemon-investments-list/pokemon-investments-list.component';
+import { PokemonService } from '../../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -23,8 +25,9 @@ import { InvestInPokemonComponent } from '../../widgets/invest-in-pokemon/invest
 export class PokemonComponent {
 
   readonly dialog = inject(MatDialog);
-
-  readonly pokedexNumber = signal(0);
+  readonly iconParams = signal<IconParams | null>(null);
+  readonly pokemon = signal<PokemonInvestment | null>(null);
+  readonly pokemonService = inject(PokemonService);
 
   @ViewChild('chart') private chartContainer!: ElementRef<SVGSVGElement>;
 
@@ -59,7 +62,15 @@ export class PokemonComponent {
 
   @Input()
   set pokemonNumber(pokemonNumber: number) {
-    this.pokedexNumber.set(pokemonNumber);
+    this.pokemonService.getAPokemon({
+      pokedexNumber: pokemonNumber,
+      form: 'default'
+    })
+    .subscribe((pokemon) => this.pokemon.set(pokemon));
+    // this.iconParams.set({
+    //   pokedexNumber: pokemonNumber,
+    //   form: 'default'
+    // });
   }
 
   openDialog(): void {

@@ -18,4 +18,14 @@ export class PokemonService {
       path: '/pokemon/all'
     });
   }
+
+  getAPokemon(
+    params: {form: string, pokedexNumber: number}
+  ): Observable<PokemonInvestment> {
+    return this.mockServer.call({
+      verb: 'GET',
+      path: `/pokemon/${params.pokedexNumber}/${params.form}`
+    });
+  }
+
 }

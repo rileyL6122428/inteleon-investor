@@ -1,5 +1,10 @@
 import { Component, input } from '@angular/core';
 
+export interface IconParams {
+  pokedexNumber: number;
+  form: string;
+}
+
 @Component({
   selector: 'app-pokemon-icon',
   imports: [],

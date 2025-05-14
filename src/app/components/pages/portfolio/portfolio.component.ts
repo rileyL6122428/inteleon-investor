@@ -61,7 +61,8 @@ export class PortfolioComponent implements OnInit {
           amount: 3000,
           yourCutNumerator: 22,
           yourCutDenominator: 25,
-          canEdit: true
+          canEdit: true,
+          iconPath: 'pokemon/0115/default/icon.png'
         },
         {
           pokedexNumber: 150,
@@ -71,7 +72,8 @@ export class PortfolioComponent implements OnInit {
           amount: 1000,
           yourCutNumerator: 19,
           yourCutDenominator: 20,
-          canEdit: true
+          canEdit: true,
+          iconPath: 'pokemon/0150/default/icon.png'
         },
       ]
     },
@@ -88,7 +90,8 @@ export class PortfolioComponent implements OnInit {
           pokemonForm: 'default',
           slogan: 'Mega profits in mega formats',
           amount: 500,
-          returnedAmount: 2500
+          returnedAmount: 2500,
+          iconPath: 'pokemon/0115/default/icon.png'
         },
         {
           pokedexNumber: 150,
@@ -96,7 +99,8 @@ export class PortfolioComponent implements OnInit {
           pokemonForm: 'default',
           slogan: 'Please tariff shadow rider',
           amount: 500,
-          returnedAmount: 2500
+          returnedAmount: 2500,
+          iconPath: 'pokemon/0150/default/icon.png'
         },
       ]
     },
@@ -113,7 +117,8 @@ export class PortfolioComponent implements OnInit {
           pokemonForm: 'default',
           slogan: 'Mega profits in mega formats',
           amount: 1000,
-          returnedAmount: 500
+          returnedAmount: 500,
+          iconPath: 'pokemon/0115/default/icon.png'
         },
         {
           pokedexNumber: 150,
@@ -121,7 +126,8 @@ export class PortfolioComponent implements OnInit {
           pokemonForm: 'default',
           slogan: 'Please tariff shadow rider',
           amount: 1000,
-          returnedAmount: 500
+          returnedAmount: 500,
+          iconPath: 'pokemon/0150/default/icon.png'
         },
       ]
     },

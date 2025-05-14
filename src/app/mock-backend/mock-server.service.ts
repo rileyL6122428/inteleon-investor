@@ -15,6 +15,14 @@ export class MockServer {
 
     if (verb === 'GET' && path === '/pokemon/all') {
       serverResponse$ = of(new PokemonController(MOCK_DATABASE).getAll());
+    } else if (verb === 'GET' && path.match(/pokemon\/(\d+)\/([a-z]+)/)) {
+      const matches = path.match(/pokemon\/(\d+)\/([a-z]+)/);
+      const pokedexNumber = Number(matches![1]);
+      const form = matches![2]
+      ;
+      serverResponse$ = of(
+        new PokemonController(MOCK_DATABASE).getOne({ pokedexNumber, form })
+      );
     } else if (verb === 'GET' && path === '/current-user/portfolio') {
       serverResponse$ = of(
         new PortfolioController(MOCK_DATABASE)

@@ -1,6 +1,6 @@
 <mat-tab-group (selectedIndexChange)="onTabChange()" preserveContent>
   <mat-tab label="Leaderboard">
-    <app-current-leaderboard></app-current-leaderboard>
+    <app-leaderboard-table [leaders]="top6()" />
   </mat-tab>
   <mat-tab label="Leaders over time">
     <!--

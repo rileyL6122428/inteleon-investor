@@ -6,6 +6,7 @@ export interface User {
   password: string;
   freeCash: number;
   netWorth: number;
+  createdAt: Date;
 }
 
 export class UserTable extends DatabaseTable<User> {}

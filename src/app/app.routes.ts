@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutThisSiteComponent } from './components/pages/about-this-site/about-this-site.component';
 import { PortfolioComponent } from './components/pages/portfolio/portfolio.component';
-import { ResultsComponent } from './components/pages/results/results.component';
+import { ResultsComponent } from './components/pages/leaderboard/leaderboard.component';
 import { PokemonComponent } from './components/pages/pokemon/pokemon.component';
 import { SearchPokemonComponent } from './components/pages/search-pokemon/search-pokemon.component';
 import { PokemonDashboardComponent } from './components/pages/pokemon-dashboard/pokemon-dashboard.component';
@@ -10,7 +10,7 @@ import { ThemeSelectionComponent } from './components/pages/theme-selection/them
 
 export const routes: Routes = [
     {
-        path: 'results',
+        path: 'leaderboard',
         component: ResultsComponent
     },
     {

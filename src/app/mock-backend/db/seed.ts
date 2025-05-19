@@ -1,3 +1,4 @@
+import { LeaderSnapshot } from "./leaders-over-time-table";
 import { Pokemon } from "./pokemon-table";
 import { User } from "./user-table";
 
@@ -49,6 +50,65 @@ export const USER_SEED: User[] = [
     freeCash: 0,
     netWorth: 700_000_000,
     createdAt: new Date(2000, 0, 1)
+  },
+  {
+    id: '7',
+    username: 'Oak-0001',
+    password: 'password',
+    freeCash: 0,
+    netWorth: 100_000_000,
+    createdAt: new Date(2000, 0, 1)
+  },
+  {
+    id: '8',
+    username: 'Brock-0001',
+    password: 'password',
+    freeCash: 0,
+    netWorth: 100_000_000,
+    createdAt: new Date(2000, 0, 1)
+  },
+  {
+    id: '9',
+    username: 'Misty-0001',
+    password: 'password',
+    freeCash: 0,
+    netWorth: 100_000_000,
+    createdAt: new Date(2000, 0, 1)
+  },
+  {
+    id: '10',
+    username: 'Surge-0001',
+    password: 'password',
+    freeCash: 0,
+    netWorth: 100_000_000,
+    createdAt: new Date(2000, 0, 1)
+  },
+];
+
+export const LEADERS_OVER_TIME_SEED: LeaderSnapshot[] = [
+  {
+    id: '1',
+    userid: '1',
+    netWorth: 100,
+    date: new Date(2023, 0, 1)
+  },
+  {
+    id: '2',
+    userid: '2',
+    netWorth: 750,
+    date: new Date(2023, 0, 1)
+  },
+  {
+    id: '3',
+    userid: '7',
+    netWorth: 200,
+    date: new Date(2023, 0, 1)
+  },
+  {
+    id: '4',
+    userid: '9',
+    netWorth: 205,
+    date: new Date(2023, 0, 1)
   },
 ];
 

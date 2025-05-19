@@ -6,6 +6,7 @@ import { LeaderboardTableComponent, Leader } from '../../leaderboard-table/leade
 import { WealthDistPieComponent } from '../../wealth-dist-pie/wealth-dist-pie.component';
 import { BarChartRaceComponent } from '../../bar-chart-race/bar-chart-race.component';
 import { LeaderboardService } from '../../../services/leaderboard.service';
+import { LoadingShimmerComponent } from '../../widgets/loading-shimmer/loading-shimmer.component';
 
 
 @Component({
@@ -15,12 +16,15 @@ import { LeaderboardService } from '../../../services/leaderboard.service';
     MatTabsModule,
     WealthDistPieComponent,
     LeaderboardTableComponent,
-    BarChartRaceComponent
+    BarChartRaceComponent,
+    LoadingShimmerComponent
   ],
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss'
 })
 export class ResultsComponent implements OnInit {
+
+  loading = signal(true);
 
   @ViewChild('resultsOverTime') resultsOverTime: BarChartRaceComponent | null = null;
 
@@ -43,7 +47,9 @@ export class ResultsComponent implements OnInit {
               createdAt: user.createdAt,
             }
           })
-        )
+        );
+
+        this.loading.set(false);
       });    
   }
 }

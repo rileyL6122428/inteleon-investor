@@ -3,8 +3,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { LeaderboardTableComponent, Leader } from '../../leaderboard-table/leaderboard-table.component';
-import { WealthDistPieComponent } from '../../wealth-dist-pie/wealth-dist-pie.component';
-import { BarChartRaceComponent } from '../../bar-chart-race/bar-chart-race.component';
+import { DistributionPiece, WealthDistPieComponent } from '../../wealth-dist-pie/wealth-dist-pie.component';
+import { BarChartRaceComponent, BarChartRace } from '../../bar-chart-race/bar-chart-race.component';
 import { LeaderboardService } from '../../../services/leaderboard.service';
 import { LoadingShimmerComponent } from '../../widgets/loading-shimmer/loading-shimmer.component';
 
@@ -29,6 +29,8 @@ export class ResultsComponent implements OnInit {
   @ViewChild('resultsOverTime') resultsOverTime: BarChartRaceComponent | null = null;
 
   top6 = signal<Leader[]>([]);
+  leadersOverTime = signal<BarChartRace[]>([]);
+  wealthDist = signal<DistributionPiece[]>([]);
   leaderboardService = inject(LeaderboardService);
 
   onTabChange() {
@@ -38,16 +40,9 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
     this.leaderboardService.fetchLeaders()
       .subscribe((response) => {
-        this.top6.set(
-          response.top6.map((user, index) => {
-            return {
-              position: index + 1,
-              name: user.username,
-              cash: user.netWorth,
-              createdAt: user.createdAt,
-            }
-          })
-        );
+        this.top6.set(response.top6);
+        this.leadersOverTime.set(response.leadersOverTime)
+        this.wealthDist.set(response.wealthDist);
 
         this.loading.set(false);
       });    

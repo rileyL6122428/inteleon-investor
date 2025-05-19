@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import * as d3 from 'd3';
 
-interface BarData {
+export interface BarChartRace {
   date: string;
   value: number;
   name: string;
@@ -14,39 +14,40 @@ interface BarData {
 })
 export class BarChartRaceComponent {
   
-  data: BarData[] = [
-  { date: '2025-01-01', name: 'Blue', value: 100 },
-  { date: '2025-01-01', name: 'Lance', value: 80 },
-  { date: '2025-01-01', name: 'Red', value: 60 },
-  { date: '2025-01-01', name: 'Lorelei', value: 60 },
+  data = input<BarChartRace[]>([]);
+//   data: BarChartRace[] = [
+//   { date: '2025-01-01', name: 'Blue', value: 100 },
+//   { date: '2025-01-01', name: 'Lance', value: 80 },
+//   { date: '2025-01-01', name: 'Red', value: 60 },
+//   { date: '2025-01-01', name: 'Lorelei', value: 60 },
   
-  { date: '2025-01-02', name: 'Blue', value: 120 },
-  { date: '2025-01-02', name: 'Lance', value: 90 },
-  { date: '2025-01-02', name: 'Red', value: 55 },
-  { date: '2025-01-02', name: 'Lorelei', value: 85 },
+//   { date: '2025-01-02', name: 'Blue', value: 120 },
+//   { date: '2025-01-02', name: 'Lance', value: 90 },
+//   { date: '2025-01-02', name: 'Red', value: 55 },
+//   { date: '2025-01-02', name: 'Lorelei', value: 85 },
   
-  { date: '2025-01-03', name: 'Blue', value: 130 },
-  { date: '2025-01-03', name: 'Lance', value: 95 },
-  { date: '2025-01-03', name: 'Red', value: 70 },
-  { date: '2025-01-03', name: 'Lorelei', value: 100 },
+//   { date: '2025-01-03', name: 'Blue', value: 130 },
+//   { date: '2025-01-03', name: 'Lance', value: 95 },
+//   { date: '2025-01-03', name: 'Red', value: 70 },
+//   { date: '2025-01-03', name: 'Lorelei', value: 100 },
   
-  { date: '2025-01-04', name: 'Blue', value: 125 },
-  { date: '2025-01-04', name: 'Lance', value: 110 },
-  { date: '2025-01-04', name: 'Red', value: 100 },
-  { date: '2025-01-04', name: 'Lorelei', value: 105 },
+//   { date: '2025-01-04', name: 'Blue', value: 125 },
+//   { date: '2025-01-04', name: 'Lance', value: 110 },
+//   { date: '2025-01-04', name: 'Red', value: 100 },
+//   { date: '2025-01-04', name: 'Lorelei', value: 105 },
   
-  { date: '2025-01-05', name: 'Blue', value: 140 },
-  { date: '2025-01-05', name: 'Lance', value: 130 },
-  { date: '2025-01-05', name: 'Red', value: 151 },
-  { date: '2025-01-05', name: 'Lorelei', value: 110 },
-];
+//   { date: '2025-01-05', name: 'Blue', value: 140 },
+//   { date: '2025-01-05', name: 'Lance', value: 130 },
+//   { date: '2025-01-05', name: 'Red', value: 151 },
+//   { date: '2025-01-05', name: 'Lorelei', value: 110 },
+// ];
 
   private svg: any;
   private width = 800;
   private height = 500;
   private margin = { top: 40, right: 20, bottom: 40, left: 100 };
   private currentFrameIndex = 0;
-  private groupedData: Map<string, BarData[]> = new Map();
+  private groupedData: Map<string, BarChartRace[]> = new Map();
   private dates: string[] = [];
   private playing = false;
   private interval: any;
@@ -58,7 +59,7 @@ export class BarChartRaceComponent {
   }
 
   processData() {
-    this.data.forEach(d => {
+    this.data().forEach(d => {
       if (!this.groupedData.has(d.date)) this.groupedData.set(d.date, []);
       this.groupedData.get(d.date)?.push(d);
     });

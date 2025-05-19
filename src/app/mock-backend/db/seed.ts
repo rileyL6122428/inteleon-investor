@@ -5,7 +5,7 @@ import { User } from "./user-table";
 export const USER_SEED: User[] = [
   {
     id: '1',
-    username: 'red-0001',
+    username: 'Red-0001',
     password: 'password',
     freeCash: 1000,
     netWorth: 5000,
@@ -109,6 +109,90 @@ export const LEADERS_OVER_TIME_SEED: LeaderSnapshot[] = [
     userid: '9',
     netWorth: 205,
     date: new Date(2023, 0, 1)
+  },
+  {
+    id: '5',
+    userid: '10',
+    netWorth: 200,
+    date: new Date(2023, 0, 1)
+  },
+  {
+    id: '6',
+    userid: '4',
+    netWorth: 205,
+    date: new Date(2023, 0, 1)
+  },
+  {
+    id: '7',
+    userid: '1',
+    netWorth: 230,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '8',
+    userid: '5',
+    netWorth: 730,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '9',
+    userid: '7',
+    netWorth: 400,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '10',
+    userid: '9',
+    netWorth: 205,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '11',
+    userid: '10',
+    netWorth: 200,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '12',
+    userid: '4',
+    netWorth: 500,
+    date: new Date(2023, 1, 1)
+  },
+  {
+    id: '13',
+    userid: '4',
+    netWorth: 305,
+    date: new Date(2023, 2, 1)
+  },
+  {
+    id: '14',
+    userid: '1',
+    netWorth: 800,
+    date: new Date(2023, 2, 1)
+  },
+  {
+    id: '15',
+    userid: '5',
+    netWorth: 720,
+    date: new Date(2023, 2, 1)
+  },
+  {
+    id: '16',
+    userid: '7',
+    netWorth: 405,
+    date: new Date(2023, 2, 1)
+  },
+  {
+    id: '17',
+    userid: '9',
+    netWorth: 250,
+    date: new Date(2023, 2, 1)
+  },
+  {
+    id: '18',
+    userid: '10',
+    netWorth: 300,
+    date: new Date(2023, 2, 1)
   },
 ];
 

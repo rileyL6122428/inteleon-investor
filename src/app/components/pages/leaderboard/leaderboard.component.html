@@ -14,11 +14,11 @@
         When the template initially renders.
       -->
       <ng-template matTabContent>
-        <app-bar-chart-race #resultsOverTime></app-bar-chart-race>
+        <app-bar-chart-race #resultsOverTime [data]="leadersOverTime()"></app-bar-chart-race>
       </ng-template>
     </mat-tab>
     <mat-tab label="Wealth distribution">
-       <app-wealth-dist-pie></app-wealth-dist-pie>
+       <app-wealth-dist-pie [data]="wealthDist()"></app-wealth-dist-pie>
     </mat-tab>
   </mat-tab-group>
 }

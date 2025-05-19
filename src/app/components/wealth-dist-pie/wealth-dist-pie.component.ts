@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, ElementRef, viewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, input, viewChild } from '@angular/core';
 
 import * as d3 from 'd3';
 
-export interface ExampleData {
+export interface DistributionPiece {
   name: string;
   value: number;
 }
@@ -15,15 +15,17 @@ export interface ExampleData {
 })
 export class WealthDistPieComponent implements AfterViewInit {
   wealthDistContainer = viewChild<ElementRef<HTMLElement>>('wealthDistributionContainer');
+  data = input<DistributionPiece[]>([]);
   
   ngAfterViewInit(): void {
-      const data = [
-        {value: 35, name: 'Top 5%'},
-        {value: 20, name: '(5%, 10%]'},
-        {value: 15, name: '(10%, 20%]'},
-        {value: 16, name: '(20%, 50%]'},
-        {value: 14, name: '(50%, 100%]'},
-      ].reverse();
+      const data = this.data().reverse();
+      // const data = [
+      //   {value: 35, name: 'Top 5%'},
+      //   {value: 20, name: '(5%, 10%]'},
+      //   {value: 15, name: '(10%, 20%]'},
+      //   {value: 16, name: '(20%, 50%]'},
+      //   {value: 14, name: '(50%, 100%]'},
+      // ].reverse();
   
       const width = 500;
   

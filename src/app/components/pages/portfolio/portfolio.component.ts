@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
 import { PercentageChangeComponent } from '../../widgets/percentage-change/percentage-change.component';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../../services/portfolio.service';
+import { LoadingShimmerComponent } from '../../widgets/loading-shimmer/loading-shimmer.component';
 
 export interface TournamentInvestment {
   date: Date;
@@ -32,13 +33,14 @@ export interface TournamentInvestment {
     PokemonInvestmentsListComponent,
     DatePipe,
     PercentageChangeComponent,
-    RouterLink
+    RouterLink,
+    LoadingShimmerComponent
 ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit {
-
+  readonly loading = signal(true);
   private portfolioService = inject(PortfolioService);
 
   currentNetWorth = signal<number>(0);
@@ -138,6 +140,7 @@ export class PortfolioComponent implements OnInit {
       (portfolio) => {
         this.currentNetWorth.set(portfolio.netWorth);
         this.freeCash.set(portfolio.freeCash);
+        this.loading.set(false);
       }
     );
   }

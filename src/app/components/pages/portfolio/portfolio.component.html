@@ -1,36 +1,42 @@
-<section>
-  <h2 id="assets-header">Portfolio</h2>
-  <p id="net-worth">Net worth: <app-poke-dollars [amount]="currentNetWorth()" /></p>
-  <p id="lifetime-returns">
-    <span id="lifetime-returns-text">Lifetime change:</span>
-    <app-percentage-change
-      [initial]="initialNetWorth()"
-      [final]="currentNetWorth()" />
-  </p>
-  <p id="free-cash">Free cash: <app-poke-dollars [amount]="freeCash()"/></p>
+@if(loading()) {
+  <app-loading-shimmer />
+}
 
-  <h3>Tournament investments</h3>
-  <mat-accordion class="investment-accordion">
-    @for(investment of tournamentInvestments(); track $index) {
-      <mat-expansion-panel [expanded]="investment.isUpcoming">
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{investment.date | date:'M/d/yyyy' }} - {{investment.province}}</mat-panel-title>
-          <mat-panel-description>
+@else {
+  <section>
+    <h2 id="assets-header">Portfolio</h2>
+    <p id="net-worth">Net worth: <app-poke-dollars [amount]="currentNetWorth()" /></p>
+    <p id="lifetime-returns">
+      <span id="lifetime-returns-text">Lifetime change:</span>
+      <app-percentage-change
+        [initial]="initialNetWorth()"
+        [final]="currentNetWorth()" />
+    </p>
+    <p id="free-cash">Free cash: <app-poke-dollars [amount]="freeCash()"/></p>
+  
+    <h3>Tournament investments</h3>
+    <mat-accordion class="investment-accordion">
+      @for(investment of tournamentInvestments(); track $index) {
+        <mat-expansion-panel [expanded]="investment.isUpcoming">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{investment.date | date:'M/d/yyyy' }} - {{investment.province}}</mat-panel-title>
+            <mat-panel-description>
+              @if(investment.isUpcoming) {
+                Upcoming
+              }
+              @else {
+                <app-percentage-change
+                  [initial]="investment.totalInvested"
+                  [final]="investment.totalReturned"/>
+              }
+            </mat-panel-description>
+          </mat-expansion-panel-header>
             @if(investment.isUpcoming) {
-              Upcoming
+              <a routerLink="/pokemon">Add mons</a>
             }
-            @else {
-              <app-percentage-change
-                [initial]="investment.totalInvested"
-                [final]="investment.totalReturned"/>
-            }
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-          @if(investment.isUpcoming) {
-            <a routerLink="/pokemon">Add mons</a>
-          }
-          <app-pokemon-investments-list [investments]="investment.mons"/>
-      </mat-expansion-panel>
-    }
-  </mat-accordion>
-</section>
+            <app-pokemon-investments-list [investments]="investment.mons"/>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+}

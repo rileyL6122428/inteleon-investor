@@ -22,7 +22,6 @@ export class LeaderboardService {
     wealthDist: DistributionPiece[]
   }> {
     const cachedLeaders = this.cache.get(LeaderboardService.CACHE_KEY);
-    // debugger;
     if (cachedLeaders) {
       return of(cachedLeaders);
     }

@@ -1,5 +1,7 @@
 import { LeaderSnapshot } from "./leaders-over-time-table";
 import { Pokemon } from "./pokemon-table";
+import { TournamentInvestment } from "./tournament-investment-table";
+import { Tournament } from "./tournament-table";
 import { User } from "./user-table";
 
 export const USER_SEED: User[] = [
@@ -250,3 +252,77 @@ export const POKEMON_SEED: Pokemon[] = [
 
 ];
 
+export const TOURNAMENT_SEED: Tournament[] = [
+  {
+    id: "1",
+    date: new Date(2025, 2, 10),
+    completed: true,
+    province: "Texas",
+    isNext: false,
+  },
+  {
+    id: "2",
+    date: new Date(2025, 3, 10),
+    completed: true,
+    province: "Kentucky",
+    isNext: false,
+  },
+  {
+    id: "3",
+    date: new Date(2025, 4, 10),
+    completed: false,
+    province: "Florida",
+    isNext: true,
+  },
+];
+
+export const TOURNAMENT_INVESTMENT_SEED: TournamentInvestment[] = [
+  {
+    id: "1",
+    tournamentId: "1",
+    pokemonId: '115-default',
+    userId: "1",
+    invested: 1000,
+    returned: 500
+  },
+  {
+    id: "2",
+    tournamentId: "1",
+    pokemonId: '150-default',
+    userId: "1",
+    invested: 1000,
+    returned: 500
+  },
+  {
+    id: "3",
+    tournamentId: "2",
+    pokemonId: '115-default',
+    userId: "1",
+    invested: 500,
+    returned: 2500
+  },
+  {
+    id: "4",
+    tournamentId: "2",
+    pokemonId: '150-default',
+    userId: "1",
+    invested: 500,
+    returned: 2500
+  },
+  {
+    id: "5",
+    tournamentId: "3",
+    pokemonId: '115-default',
+    userId: "1",
+    invested: 2500,
+    returned: null
+  },
+  {
+    id: "6",
+    tournamentId: "3",
+    pokemonId: '150-default',
+    userId: "1",
+    invested: 2500,
+    returned: null
+  },
+];

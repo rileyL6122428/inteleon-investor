@@ -47,93 +47,94 @@ export class PortfolioComponent implements OnInit {
   initialNetWorth = signal(2000);
   freeCash = signal(0);
 
-  tournamentInvestments = signal<TournamentInvestment[]>([
-    {
-      date: new Date(2025, 4, 10),
-      isUpcoming: true,
-      province: 'Florida',
-      totalInvested: 4000,
-      totalReturned: 0,
-      mons: [
-        {
-          pokedexNumber: 115,
-          pokemonName: 'Kangaskhan',
-          pokemonForm: 'default',
-          slogan: 'Mega profits in mega formats',
-          amount: 3000,
-          yourCutNumerator: 22,
-          yourCutDenominator: 25,
-          canEdit: true,
-          iconPath: 'pokemon/0115/default/icon.png'
-        },
-        {
-          pokedexNumber: 150,
-          pokemonName: 'Mewtwo',
-          pokemonForm: 'default',
-          slogan: 'Please tariff shadow rider',
-          amount: 1000,
-          yourCutNumerator: 19,
-          yourCutDenominator: 20,
-          canEdit: true,
-          iconPath: 'pokemon/0150/default/icon.png'
-        },
-      ]
-    },
-    {
-      date: new Date(2025, 3, 10),
-      isUpcoming: false,
-      province: 'Kentucky',
-      totalInvested: 1000,
-      totalReturned: 5000,
-      mons: [
-        {
-          pokedexNumber: 115,
-          pokemonName: 'Kangaskhan',
-          pokemonForm: 'default',
-          slogan: 'Mega profits in mega formats',
-          amount: 500,
-          returnedAmount: 2500,
-          iconPath: 'pokemon/0115/default/icon.png'
-        },
-        {
-          pokedexNumber: 150,
-          pokemonName: 'Mewtwo',
-          pokemonForm: 'default',
-          slogan: 'Please tariff shadow rider',
-          amount: 500,
-          returnedAmount: 2500,
-          iconPath: 'pokemon/0150/default/icon.png'
-        },
-      ]
-    },
-    {
-      date: new Date(2025, 2, 10),
-      isUpcoming: false,
-      province: 'Texas',
-      totalInvested: 2000,
-      totalReturned: 1000,
-      mons: [
-        {
-          pokedexNumber: 115,
-          pokemonName: 'Kangaskhan',
-          pokemonForm: 'default',
-          slogan: 'Mega profits in mega formats',
-          amount: 1000,
-          returnedAmount: 500,
-          iconPath: 'pokemon/0115/default/icon.png'
-        },
-        {
-          pokedexNumber: 150,
-          pokemonName: 'Mewtwo',
-          pokemonForm: 'default',
-          slogan: 'Please tariff shadow rider',
-          amount: 1000,
-          returnedAmount: 500,
-          iconPath: 'pokemon/0150/default/icon.png'
-        },
-      ]
-    },
-  ]);
+  tournamentInvestments = signal<TournamentInvestment[]>([]);
+  // tournamentInvestments = signal<TournamentInvestment[]>([
+  //   {
+  //     date: new Date(2025, 4, 10),
+  //     isUpcoming: true,
+  //     province: 'Florida',
+  //     totalInvested: 4000,
+  //     totalReturned: 0,
+  //     mons: [
+  //       {
+  //         pokedexNumber: 115,
+  //         pokemonName: 'Kangaskhan',
+  //         pokemonForm: 'default',
+  //         slogan: 'Mega profits in mega formats',
+  //         amount: 3000,
+  //         yourCutNumerator: 22,
+  //         yourCutDenominator: 25,
+  //         canEdit: true,
+  //         iconPath: 'pokemon/0115/default/icon.png'
+  //       },
+  //       {
+  //         pokedexNumber: 150,
+  //         pokemonName: 'Mewtwo',
+  //         pokemonForm: 'default',
+  //         slogan: 'Please tariff shadow rider',
+  //         amount: 1000,
+  //         yourCutNumerator: 19,
+  //         yourCutDenominator: 20,
+  //         canEdit: true,
+  //         iconPath: 'pokemon/0150/default/icon.png'
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     date: new Date(2025, 3, 10),
+  //     isUpcoming: false,
+  //     province: 'Kentucky',
+  //     totalInvested: 1000,
+  //     totalReturned: 5000,
+  //     mons: [
+  //       {
+  //         pokedexNumber: 115,
+  //         pokemonName: 'Kangaskhan',
+  //         pokemonForm: 'default',
+  //         slogan: 'Mega profits in mega formats',
+  //         amount: 500,
+  //         returnedAmount: 2500,
+  //         iconPath: 'pokemon/0115/default/icon.png'
+  //       },
+  //       {
+  //         pokedexNumber: 150,
+  //         pokemonName: 'Mewtwo',
+  //         pokemonForm: 'default',
+  //         slogan: 'Please tariff shadow rider',
+  //         amount: 500,
+  //         returnedAmount: 2500,
+  //         iconPath: 'pokemon/0150/default/icon.png'
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     date: new Date(2025, 2, 10),
+  //     isUpcoming: false,
+  //     province: 'Texas',
+  //     totalInvested: 2000,
+  //     totalReturned: 1000,
+  //     mons: [
+  //       {
+  //         pokedexNumber: 115,
+  //         pokemonName: 'Kangaskhan',
+  //         pokemonForm: 'default',
+  //         slogan: 'Mega profits in mega formats',
+  //         amount: 1000,
+  //         returnedAmount: 500,
+  //         iconPath: 'pokemon/0115/default/icon.png'
+  //       },
+  //       {
+  //         pokedexNumber: 150,
+  //         pokemonName: 'Mewtwo',
+  //         pokemonForm: 'default',
+  //         slogan: 'Please tariff shadow rider',
+  //         amount: 1000,
+  //         returnedAmount: 500,
+  //         iconPath: 'pokemon/0150/default/icon.png'
+  //       },
+  //     ]
+  //   },
+  // ]);
 
   ngOnInit(): void {
     this.portfolioService.getPortfolio().subscribe(
@@ -141,6 +142,7 @@ export class PortfolioComponent implements OnInit {
         this.currentNetWorth.set(portfolio.netWorth);
         this.freeCash.set(portfolio.freeCash);
         this.loading.set(false);
+        this.tournamentInvestments.set(portfolio.tournaments);
       }
     );
   }

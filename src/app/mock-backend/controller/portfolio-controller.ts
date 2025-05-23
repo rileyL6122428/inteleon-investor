@@ -73,7 +73,8 @@ export class PortfolioController extends BaseController {
             slogan: pokemon.slogan,
             amount: investment.invested,
             returnedAmount: investment.returned,
-            iconPath: pokemon.iconPath
+            iconPath: pokemon.iconPath,
+            canEdit: tournament.isNext,
           };
         })
       }
